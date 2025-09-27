@@ -50,7 +50,7 @@ export default function Page() {
           ].map((f, i) => {
             const Icon = f.icon;
             return (
-              <Card key={i} className="rounded-2xl">
+              <Card key={i} className="mx-auto w-full max-w-sm rounded-2xl md:max-w-none">
                 <CardHeader className="flex flex-row items-center gap-3">
                   <Icon className="h-6 w-6" />
                   <CardTitle className="text-xl">{f.title}</CardTitle>
@@ -90,7 +90,7 @@ export default function Page() {
             const Icon = item.icon;
             return (
               <li key={i}>
-                <Card className="h-full rounded-2xl">
+                <Card className="mx-auto h-full w-full max-w-sm rounded-2xl md:max-w-none">
                   <CardHeader>
                     <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl border">
@@ -115,7 +115,7 @@ export default function Page() {
         subtitle="A single comment with the context everyone wants—no spelunking through tickets or commits."
       >
         <div className="grid gap-6 lg:grid-cols-1">
-          <Card className="rounded-2xl">
+          <Card className="w-full max-w-2xl rounded-2xl lg:max-w-3xl xl:max-w-4xl">
             <CardHeader>
               <CardTitle>Example PR Comment</CardTitle>
             </CardHeader>
@@ -139,7 +139,7 @@ export default function Page() {
 
       <Section id="install" title="Install in minutes">
         <div className="grid gap-6 lg:grid-cols-1">
-          <Card className="rounded-2xl">
+          <Card className="w-full max-w-xl rounded-2xl sm:max-w-2xl lg:max-w-3xl">
             <CardHeader>
               <CardTitle>Add the Action</CardTitle>
             </CardHeader>
@@ -204,21 +204,28 @@ jobs:
       </Section>
 
       <Section id="cta" title="Ready to speed up reviews?">
-        <div className="flex flex-wrap items-center gap-3">
-          <Button asChild size="lg" className="rounded-2xl">
+        <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+          <Button asChild size="lg" className="w-full rounded-2xl sm:w-auto">
             <a href={REPO_URL} target="_blank" aria-label="Open GitHub repository">
               <div className="flex items-center gap-2">
                 <GithubIcon className="h-5 w-5" /> Open on GitHub
               </div>
             </a>
           </Button>
-          <Button variant="secondary" asChild size="lg" className="rounded-2xl">
+          <Button
+            variant="secondary"
+            asChild
+            size="lg"
+            className="w-full rounded-2xl sm:w-auto"
+          >
             <a href="#install">Quickstart</a>
           </Button>
         </div>
-        <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-          <Sparkles className="h-4 w-4" /> Built in an 8-hour hackathon sprint. Minimal setup,
-          maximal signal.
+        <p className="mt-4 flex flex-col items-center gap-2 text-sm text-muted-foreground sm:flex-row">
+          <span className="inline-flex items-center gap-2">
+            <Sparkles className="h-4 w-4" /> Built in an 8-hour hackathon sprint.
+          </span>
+          <span>Minimal setup, maximal signal.</span>
         </p>
       </Section>
 

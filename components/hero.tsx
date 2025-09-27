@@ -10,21 +10,21 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden border-b">
       <div className="mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">
             <motion.h1
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-4xl font-extrabold tracking-tight md:text-5xl"
+              className="max-w-3xl text-4xl font-extrabold tracking-tight text-balance md:text-5xl"
             >
               One PR comment. <span className="inline-block">All the context.</span>
             </motion.h1>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="max-w-2xl text-lg text-muted-foreground">
               A modern GitHub Action that reads your PR and linked Jira/Linear issue to
               auto-generate a sharp, structured summary for reviewers.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
               <Button asChild size="lg" className="rounded-2xl">
                 <a href="#install">
                   <Zap className="mr-2 h-5 w-5" /> Get started
@@ -36,21 +36,23 @@ export function Hero() {
                 </a>
               </Button>
             </div>
-            <ul className="mt-6 grid gap-3 text-sm text-muted-foreground sm:grid-cols-3">
-              {["Business context", "Tech highlights", "Breaking changes"].map((t, i) => (
-                <li key={i} className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full border" /> {t}
-                </li>
-              ))}
-            </ul>
+            <div className="w-full max-w-sm sm:max-w-md md:max-w-none">
+              <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-3 sm:justify-items-start">
+                {["Business context", "Tech highlights", "Breaking changes"].map((t, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full border" /> {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative"
+            className="relative w-full max-w-xl sm:max-w-2xl md:max-w-none"
           >
-            <Card className="rounded-2xl shadow-lg">
+            <Card className="mx-auto w-full max-w-md rounded-2xl shadow-lg sm:max-w-xl md:max-w-2xl lg:mx-0 lg:max-w-none">
               <CardHeader>
                 <CardTitle className="text-base">PR Comment Preview</CardTitle>
               </CardHeader>

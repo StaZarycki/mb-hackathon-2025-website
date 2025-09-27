@@ -21,9 +21,11 @@ export function Section({
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
       >
-        <div className="mb-10">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{title}</h2>
-          {subtitle && <p className="mt-2 max-w-2xl text-muted-foreground">{subtitle}</p>}
+        <div className="mb-10 space-y-3 text-center md:text-left">
+          <h2 className="text-3xl font-bold tracking-tight text-balance md:text-4xl">{title}</h2>
+          {subtitle ? (
+            <p className="mx-auto max-w-2xl text-muted-foreground md:mx-0">{subtitle}</p>
+          ) : null}
         </div>
         {children}
       </motion.div>
