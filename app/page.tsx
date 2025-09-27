@@ -7,8 +7,8 @@ import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { REPO_URL } from "@/lib/config";
+import { GithubIcon } from "@/components/icons/github-icon";
 import {
-  Github,
   FileText,
   Zap,
   GitPullRequest,
@@ -208,7 +208,7 @@ jobs:
           <Button asChild size="lg" className="rounded-2xl">
             <a href={REPO_URL} target="_blank" aria-label="Open GitHub repository">
               <div className="flex items-center gap-2">
-                <Github className="h-5 w-5" /> Open on GitHub
+                <GithubIcon className="h-5 w-5" /> Open on GitHub
               </div>
             </a>
           </Button>

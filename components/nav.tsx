@@ -1,7 +1,10 @@
 "use client";
 
-import { Github, GitBranch } from "lucide-react";
+import { GitBranch } from "lucide-react";
+import { GithubIcon } from "@/components/icons/github-icon";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { REPO_URL } from "@/lib/config";
 
 export function Nav() {
   return (
@@ -28,9 +31,10 @@ export function Nav() {
           </a>
         </nav>
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <Button asChild size="sm" className="rounded-xl">
-            <a href="#" aria-label="GitHub">
-              <Github className="mr-1 h-4 w-4" /> GitHub
+            <a href={REPO_URL} target="_blank" aria-label="GitHub">
+              <GithubIcon className="mr-1 h-4 w-4" /> GitHub
             </a>
           </Button>
         </div>

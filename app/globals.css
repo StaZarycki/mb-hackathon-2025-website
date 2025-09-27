@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    color-scheme: light;
+  }
+
+  .dark {
+    --background: 240 6% 9%;
+    --foreground: 0 0% 93%;
+    --border: 240 5% 20%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 4% 70%;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
